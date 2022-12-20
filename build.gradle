@@ -38,7 +38,7 @@ buildscript {
         bwcVersion = bwcVersionShort + ".0"
         bwcOpenSearchADDownload = 'https://ci.opensearch.org/ci/dbc/distribution-build-opensearch/' + bwcVersionShort + '/latest/linux/x64/tar/builds/' +
                 'opensearch/plugins/opensearch-anomaly-detection-' + bwcVersion + '.zip'
-        bwcOpenSearchJSDownload = 'https://ci.opensearch.org/ci/dbc/distribution-build-opensearch/+' + bwcVersionShort + '/latest/linux/x64/tar/builds/' +
+        bwcOpenSearchJSDownload = 'https://ci.opensearch.org/ci/dbc/distribution-build-opensearch/' + bwcVersionShort + '/latest/linux/x64/tar/builds/' +
                 'opensearch/plugins/opensearch-job-scheduler-' + bwcVersion + '.zip'
         baseName = "adBwcCluster"
         bwcFilePath = "src/test/resources/org/opensearch/ad/bwc/"
