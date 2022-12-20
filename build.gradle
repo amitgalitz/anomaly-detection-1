@@ -34,10 +34,11 @@ buildscript {
         js_resource_folder = "src/test/resources/job-scheduler"
         common_utils_version = System.getProperty("common_utils.version", opensearch_build)
         job_scheduler_version = System.getProperty("job_scheduler.version", opensearch_build)
-        bwcVersion = "2.5.0.0"
-        bwcOpenSearchADDownload = 'https://ci.opensearch.org/ci/dbc/distribution-build-opensearch/2.5.0/latest/linux/x64/tar/builds/' +
+        bwcVersionShort = "2.5.0"
+        bwcVersion = bwcVersionShort + ".0"
+        bwcOpenSearchADDownload = 'https://ci.opensearch.org/ci/dbc/distribution-build-opensearch/' + bwcVersionShort + '/latest/linux/x64/tar/builds/' +
                 'opensearch/plugins/opensearch-anomaly-detection-' + bwcVersion + '.zip'
-        bwcOpenSearchJSDownload = 'https://ci.opensearch.org/ci/dbc/distribution-build-opensearch/2.5.0/latest/linux/x64/tar/builds/' +
+        bwcOpenSearchJSDownload = 'https://ci.opensearch.org/ci/dbc/distribution-build-opensearch/+' + bwcVersionShort + '/latest/linux/x64/tar/builds/' +
                 'opensearch/plugins/opensearch-job-scheduler-' + bwcVersion + '.zip'
         baseName = "adBwcCluster"
         bwcFilePath = "src/test/resources/org/opensearch/ad/bwc/"
@@ -439,7 +440,7 @@ task integTestRemote(type: RestIntegTestTask) {
     testClusters {
         "${baseName}$i" {
             testDistribution = "ARCHIVE"
-            versions = ["2.5.0", opensearch_version]
+            versions = [bwcVersionShort, opensearch_version]
             numberOfNodes = 3
             plugin(provider(new Callable<RegularFile>(){
                 @Override
