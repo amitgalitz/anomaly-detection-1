@@ -439,7 +439,7 @@ task integTestRemote(type: RestIntegTestTask) {
     testClusters {
         "${baseName}$i" {
             testDistribution = "ARCHIVE"
-            versions = [bwcVersion, opensearch_version]
+            versions = ["2.5.0", opensearch_version]
             numberOfNodes = 3
             plugin(provider(new Callable<RegularFile>(){
                 @Override
