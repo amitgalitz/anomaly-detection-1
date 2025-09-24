@@ -2368,4 +2368,5 @@ public class AnomalyDetectorRestApiIT extends AnomalyDetectorRestTestCase {
         assertEquals("field-1", bucketKey1.get("keyword-field"));
         assertEquals("1.2.3.4", bucketKey1.get("ip-field"));
     }
+
 }
